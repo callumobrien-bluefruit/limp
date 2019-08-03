@@ -31,13 +31,13 @@ struct s_expr *make_pair_expr(struct s_expr *head, struct s_expr *tail);
 struct s_expr *make_nil(void);
 void free_expr(struct s_expr *ast);
 
-bool is_atom(struct s_expr *ast);
-bool is_int(struct s_expr *ast);
-bool is_nil(struct s_expr *ast);
+bool is_atom(const struct s_expr *ast);
+bool is_int(const struct s_expr *ast);
+bool is_nil(const struct s_expr *ast);
 
-int get_int(struct s_expr *ast);
-struct s_expr *get_head(struct s_expr *ast);
-struct s_expr *get_tail(struct s_expr *ast);
+int get_int(const struct s_expr *ast);
+struct s_expr *get_head(const struct s_expr *ast);
+struct s_expr *get_tail(const struct s_expr *ast);
 void append(struct s_expr *list, struct s_expr *elem);
 
 #endif

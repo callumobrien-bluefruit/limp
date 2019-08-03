@@ -37,34 +37,34 @@ void free_expr(struct s_expr *ast)
 	free(ast);
 }
 
-bool is_atom(struct s_expr *ast)
+bool is_atom(const struct s_expr *ast)
 {
 	return !ast->is_pair;
 }
 
-bool is_int(struct s_expr *ast)
+bool is_int(const struct s_expr *ast)
 {
 	return ast->value.atom.type == ATOM_TYPE_INT;
 }
 
-bool is_nil(struct s_expr *ast)
+bool is_nil(const struct s_expr *ast)
 {
 	return ast->value.atom.type == ATOM_TYPE_NIL;
 }
 
-int get_int(struct s_expr *ast)
+int get_int(const struct s_expr *ast)
 {
 	return ast->value.atom.value;
 }
 
-struct s_expr *get_head(struct s_expr *ast)
+struct s_expr *get_head(const struct s_expr *ast)
 {
 	if (is_atom(ast))
 		return NULL;
 	return ast->value.pair.head;
 }
 
-struct s_expr *get_tail(struct s_expr *ast)
+struct s_expr *get_tail(const struct s_expr *ast)
 {
 	if (is_atom(ast))
 		return NULL;
