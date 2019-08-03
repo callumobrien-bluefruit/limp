@@ -26,6 +26,7 @@ static struct s_expr *parse_s_expr(const char **s)
 			struct s_expr *sub_expr = parse_s_expr(s);
 			append(expr, sub_expr);
 		}
+		++*s;
 		return expr;
 	} else {
 		return parse_atom(s);
