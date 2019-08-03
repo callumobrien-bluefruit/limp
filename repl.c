@@ -29,7 +29,8 @@ int main(void)
 	while (get_line(line_buffer)) {
 		in_expr = read(line_buffer);
 		out_expr = eval(in_expr);
-		print(out_expr);
+		print(out_expr, line_buffer, MAX_LINE_LENGTH);
+		printf("%s\n", line_buffer);
 	}
 
 	return 0;
