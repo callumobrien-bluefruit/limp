@@ -4,7 +4,7 @@ OBJ = $(SRC:.c=.o)
 CFLAGS += -Wall -Wextra -std=c99 -pedantic
 
 .DEFAULT: repl
-.PHONY: clean format
+.PHONY: clean format lint
 
 eval.o print.o read.o repl.o: ast.o
 repl.o: eval.o print.o read.o
@@ -20,3 +20,6 @@ clean:
 
 format:
 	for f in $(SRC); do clang-format -i "$$f"; done
+
+lint:
+	clang-tidy $(SRC) -- $(CFLAGS)
