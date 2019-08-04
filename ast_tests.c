@@ -1,9 +1,9 @@
+#include "ast.h"
+
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-
-#include "ast.h"
 
 static void value_of_an_int_can_be_got(void)
 {
@@ -22,7 +22,7 @@ static void head_and_tail_of_a_list_can_be_got(void)
 	struct s_expr *tail = make_int_expr(54);
 	struct s_expr *pair = make_pair_expr(head, tail);
 
-	assert(!is_atom(pair));	
+	assert(!is_atom(pair));
 	assert(get_head(pair) == head);
 	assert(get_tail(pair) == tail);
 
@@ -50,7 +50,8 @@ static void can_append_to_a_list(void)
 	free_expr(list);
 }
 
-int main(void) {
+int main(void)
+{
 	value_of_an_int_can_be_got();
 	head_and_tail_of_a_list_can_be_got();
 	nil_is_nil();

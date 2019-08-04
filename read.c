@@ -1,9 +1,9 @@
+#include "read.h"
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include "read.h"
 
 static struct s_expr *parse_s_expr(const char **s);
 static struct s_expr *parse_atom(const char **s);

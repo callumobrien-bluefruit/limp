@@ -3,10 +3,7 @@
 
 #include <stdbool.h>
 
-enum atom_type {
-	ATOM_TYPE_INT,
-	ATOM_TYPE_NIL
-};
+enum atom_type { ATOM_TYPE_INT, ATOM_TYPE_NIL };
 
 struct atom {
 	enum atom_type type;

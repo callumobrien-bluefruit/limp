@@ -1,10 +1,10 @@
+#include "ast.h"
+#include "print.h"
+
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-
-#include "ast.h"
-#include "print.h"
 
 static void an_integer_can_be_printed(void)
 {

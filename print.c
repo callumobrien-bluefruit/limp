@@ -1,6 +1,6 @@
-#include <stdio.h>
-
 #include "print.h"
+
+#include <stdio.h>
 
 void print(const struct s_expr *expr, char *buf, int buf_len)
 {

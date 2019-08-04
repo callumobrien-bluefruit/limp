@@ -1,6 +1,6 @@
-#include <stdlib.h>
-
 #include "ast.h"
+
+#include <stdlib.h>
 
 struct s_expr *make_int_expr(int value)
 {

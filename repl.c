@@ -1,8 +1,8 @@
-#include <stdio.h>
-
-#include "read.h"
 #include "eval.h"
 #include "print.h"
+#include "read.h"
+
+#include <stdio.h>
 
 #define MAX_LINE_LENGTH 128
 
@@ -25,7 +25,7 @@ int main(void)
 {
 	char line_buffer[MAX_LINE_LENGTH];
 	struct s_expr *in_expr, *out_expr;
-	
+
 	while (get_line(line_buffer)) {
 		in_expr = read(line_buffer);
 		out_expr = eval(in_expr);

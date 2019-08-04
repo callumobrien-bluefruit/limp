@@ -1,9 +1,9 @@
+#include "read.h"
+
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-
-#include "read.h"
 
 void read_parses_int()
 {
@@ -42,7 +42,8 @@ void read_parses_list_of_lists(void)
 	assert(get_int(get_head(get_tail(get_tail(ast)))) == 0);
 }
 
-int main(void) {
+int main(void)
+{
 	read_parses_int();
 	read_parses_list_of_two_ints();
 	read_parses_list_of_lists();
