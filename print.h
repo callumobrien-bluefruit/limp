@@ -3,6 +3,6 @@
 
 #include "ast.h"
 
-void print(const struct s_expr *expr, char *buf, int buf_len);
+int print(const struct s_expr *expr, char *buf, int buf_len);
 
 #endif
