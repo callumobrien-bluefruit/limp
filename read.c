@@ -24,6 +24,11 @@ static struct s_expr *parse_s_expr(const char **s)
 		struct s_expr *expr = make_nil();
 		while (**s != ')') {
 			struct s_expr *sub_expr = parse_s_expr(s);
+			if (sub_expr == NULL)
+				return NULL;
+
+			while (isspace(**s))
+				++*s;
 			append(expr, sub_expr);
 		}
 		++*s;

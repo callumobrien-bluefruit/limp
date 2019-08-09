@@ -26,6 +26,7 @@ void read_parses_list_of_two_ints(void)
 
 	assert(get_int(get_head(ast)) == 42);
 	assert(get_int(get_head(get_tail(ast))) == 54);
+	assert(is_nil(get_tail(get_tail(ast))));
 }
 
 void read_parses_list_of_lists(void)
@@ -40,6 +41,20 @@ void read_parses_list_of_lists(void)
 	assert(get_int(get_head(get_head(get_tail(ast)))) == 42);
 	assert(get_int(get_head(get_tail(get_head(get_tail(ast))))) == 54);
 	assert(get_int(get_head(get_tail(get_tail(ast)))) == 0);
+	assert(is_nil(get_tail(get_tail(get_tail(ast)))));
+}
+
+void read_parses_list_with_space_before_closing_paren(void)
+{
+	struct s_expr *ast;
+	ast = read("(42 54 )");
+
+	assert(ast != NULL);
+	assert(!is_atom(ast));
+
+	assert(get_int(get_head(ast)) == 42);
+	assert(get_int(get_head(get_tail(ast))) == 54);
+	assert(is_nil(get_tail(get_tail(ast))));
 }
 
 int main(void)
@@ -47,6 +62,7 @@ int main(void)
 	read_parses_int();
 	read_parses_list_of_two_ints();
 	read_parses_list_of_lists();
+	read_parses_list_with_space_before_closing_paren();
 
 	printf("read tests passed\n");
 }
